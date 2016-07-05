@@ -3,7 +3,6 @@
 __author__ = 'zenway33'
 
 from bs4 import BeautifulSoup
-from multiprocessing import Pool
 import requests
 import time
 import os
@@ -30,6 +29,7 @@ soup = BeautifulSoup(wb_data.text, 'lxml')
 #pdfs = soup.select('div > map > area')
 #pdfs = soup.find_all('area')
 pdfs = soup.select('area[href^="http://"]')
+
 
 def get_pdf_urls():
     pdf_urls=[]
