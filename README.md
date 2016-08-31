@@ -1,15 +1,17 @@
 ##webcrawling
 ####主要学习核心模块
-1. requests
-2. bs4
-3. 函数
-4. 多进程
-5. 下载
-6. 列表、字典的应用
-7. mongodb
-8. Flask
-9. Django
-10. Echart
+1. requests、bs4、lxml、xpath
+2. 列表、字典
+3. for
+4. 函数
+5. 多进程
+6. 下载
+7. 类
+8. 命令行传参
+9. mongodb
+10. Flask
+11. Django
+12. Echart
 
 
 ####Done
