@@ -39,6 +39,7 @@ def get_info(url):  # 获取商品信息
         'view': views
     }
     print(data)
+
 Allurl = get_url_list('http://bj.58.com/pbdn/0/')
 for i in Allurl:
     get_info(i)

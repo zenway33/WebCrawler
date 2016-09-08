@@ -63,16 +63,27 @@ for title,img,cate in zip(titles,imgs,cates):
         }
     print(data)
 
-# 获取数据的函数
+# 获取数字的函数
 def trans2numbers(string):
     return int(''.join(a for a in string.strip() if a.isdigit()))
 
-def article_status(article_list):
+def get_numbers(read):
     result = []
-    for item in article_list:
-        result.append(trans2numbers(item.string))
-
+    for i in read:
+        result.append(trans2numbers(i.string))
     return result
 
-#
+
+
+# soup.select 后定处理定义一个列表:
+def get_pdf_urls():
+    pdf_urls=[]
+    for pdf_url in pdfs:
+        pdf = pdf_url.get('href').strip('#')
+        pdf_urls.append(pdf)
+    return pdf_urls
+urls = get_pdf_urls()
+
+#取列表的奇数位:
+[j for i , j in enumerate(['a', 'b','c']) if not i%2]
 

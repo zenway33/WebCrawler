@@ -43,6 +43,7 @@ def get_numbers(read):
     return result
 
 reads = get_numbers(read)
+
 '''
 def comment_numbers(comment):
     result = []

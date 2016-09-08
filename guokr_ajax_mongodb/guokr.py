@@ -6,7 +6,7 @@ import pymongo
 
 url = 'http://www.guokr.com/scientific/'
 
-def dealData(url):
+def deal_data(url):
     client = pymongo.MongoClient('localhost', 27017)
     guoke = client['guoke']
     guokeData = guoke['guokeData']
@@ -20,6 +20,6 @@ def dealData(url):
 def start():
     urls = ['http://www.guokr.com/apis/minisite/article.json?retrieve_type=by_subject&limit=20&offset={}&_=1462252453410'.format(str(i)) for i in range(20, 100, 20)]
     for url in urls:
-        dealData(url)
+        deal_data(url)
 
 start()
