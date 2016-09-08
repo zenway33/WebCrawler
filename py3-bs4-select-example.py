@@ -87,3 +87,25 @@ urls = get_pdf_urls()
 #取列表的奇数位:
 [j for i , j in enumerate(['a', 'b','c']) if not i%2]
 
+#定义列表,获取奇数列
+def carrier_list():
+    carrier_list = []
+    list_a = [j for i, j in enumerate(carriers) if not i%2]
+    for i in list_a:
+        carrier_list.append(i)
+    return carrier_list
+
+carriers = carrier_list()
+
+# 编辑器快捷键
+https://www.zhihu.com/question/38946886
+右移,选中代码块，按Tab。
+要是想往左移，就按Shift + Tab
+
+#数据分析工具
+1. 在线分词工具：基于深度学习的中文在线抽词-PullWord (梁斌penny)
+2. 在线词云生成工具：TAGUL - WORD CLOUD ART
+3. 图表：ECharts
+4. 数据爬取：Python Scrapy开发程序
+
+#
