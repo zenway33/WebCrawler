@@ -108,4 +108,64 @@ https://www.zhihu.com/question/38946886
 3. 图表：ECharts
 4. 数据爬取：Python Scrapy开发程序
 
-#
+# sys cli argv
+if len(sys.argv) < 2:
+    print("Usage: python {0} <page_start> <page_stop>\n   example: python {0} 1 10".format(sys.argv[0]))
+else:
+    get_image(sys.argv[1], sys.argv[2])
+
+# 创建目录
+path = os.getcwd()
+path = os.path.join(path,'baozou2016')
+if not os.path.exists(path):
+    os.mkdir(path)
+
+# 定义下载图片函数
+# download function url,filename
+def download(img_url,file_name):
+    r = requests.get(img_url, stream = True,headers=headers)
+    # print(r.status_code)
+    #print(file_name
+    with open(path + '/' + file_name, "wb") as fs:
+        fs.write(r.content)
+    print("%s => %s" % (img_url, file_name))
+
+# 利用zip将数据装入字典
+for title,img in zip(titles,imgs):
+    data = {
+        'title' :title.get_text(),
+        'img_url' :img.get('data-original-image-url')
+    }
+
+
+'''
+定义下载列表页函数
+'''
+def get_page_within(pages):
+    for page_num in  range(1,pages+1):
+        wb_data = requests.get('http://baozoumanhua.com/catalogs/gif?page={}'.format(page_num))
+        ....
+
+get_page_within(3)
+
+
+# 获取pdf url,返回列表
+def get_pdf_urls(web_url):
+    wb_data = requests.get(web_url,headers=headers)
+    soup = BeautifulSoup(wb_data.text, 'lxml')
+    pdfs = soup.select('area[href^="http://"]')
+
+    pdf_urls=[]
+    for pdf_url in pdfs:
+        pdf = pdf_url.get('href').strip('#')
+        pdf_urls.append(pdf)
+    return pdf_urls
+
+urls = get_pdf_urls(web_url)
+
+#main
+if __name__ == '__main__':
+    start()
+
+#获取列表页,format范例
+urls = ['http://www.guazi.com/tj/buy/o{}/'.format(str(i)) for i in range(1, 30, 1)]
