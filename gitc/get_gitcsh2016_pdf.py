@@ -38,6 +38,7 @@ def get_pdf_urls():
         pdf_urls.append(pdf)
     return pdf_urls
 urls = get_pdf_urls()
+
 #print(urls)
 
 def get_pdf_data(pdf_url):

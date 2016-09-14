@@ -4,9 +4,9 @@ import lxml
 import re
 import time
 
-url = 'http://baozoumanhua.com/catalogs/gif?page=3'
+link = 'http://baozoumanhua.com/catalogs/gif?page=3'
 
-wb_data = requests.get(url)
+wb_data = requests.get(link)
 soup = BeautifulSoup(wb_data.text, 'html.parser')
 
 titles = soup.select('div.article-content > h4 > a[target="_blank"]')
@@ -36,3 +36,6 @@ for title,img in zip(titles,imgs):
 Process finished with exit code 0
 
 '''
+
+# 目标:
+# 获取标题,图片URL

@@ -30,3 +30,6 @@ if(r):
         print('内容:' + text)
 else:
     print(error)
+
+# 目标:
+# 根据百度提供的api获取笑话

@@ -74,16 +74,6 @@ def get_numbers(read):
     return result
 
 
-
-# soup.select 后定处理定义一个列表:
-def get_pdf_urls():
-    pdf_urls=[]
-    for pdf_url in pdfs:
-        pdf = pdf_url.get('href').strip('#')
-        pdf_urls.append(pdf)
-    return pdf_urls
-urls = get_pdf_urls()
-
 #取列表的奇数位:
 [j for i , j in enumerate(['a', 'b','c']) if not i%2]
 

@@ -18,7 +18,6 @@ def saveImage(imgUrl, imgName = 'default.jpg'):
     #print 'save the file:'+path+'\n'
     with open(path,'wb') as img:
         img.write(image)
-    img.close()
 
 def run():
     for line in r['newslist']:
@@ -28,3 +27,6 @@ def run():
         print(picUrl)
         saveImage(picUrl,imgName=title+'.jpg')
 run()
+
+# 目标:
+# 根据API获取美女图片

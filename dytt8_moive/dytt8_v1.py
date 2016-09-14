@@ -44,9 +44,11 @@ def get_video_page_url():
         urllist.append(link)
     return urllist
 
-urllists = get_video_page_url()
-#print(urllists)
+page_urls = get_video_page_url()
 
+# 去重url,并保留原来的顺序
+page_urls_uniq = sorted(set(page_urls),key=page_urls.index)
+#print(page_urls_uniq)
 
 '''
     for moive_name,link  in zip(moive_names,links):
@@ -84,7 +86,7 @@ def show_video_stats():
 def show_video_stats():
     start_time = time.time()
     pool = Pool(30)
-    video_page_urls = urllists
+    video_page_urls = page_urls_uniq
     #for video_page_url  in video_page_urls:
          #print(get_video_data(video_page_url))
     results = pool.map(get_video_data, video_page_urls)
@@ -96,6 +98,7 @@ def show_video_stats():
     #--- 7.236294984817505 seconds ---
 
 show_video_stats()
+
 
 
 

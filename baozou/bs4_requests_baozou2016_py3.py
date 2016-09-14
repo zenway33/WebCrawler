@@ -21,7 +21,6 @@ def download(img_url,file_name):
     #print(file_name
     with open(path + '/' + file_name, "wb") as fs:
         fs.write(r.content)
-        fs.close
     print("%s => %s" % (img_url, file_name))
 
 '''
@@ -86,4 +85,8 @@ get_page_within(3)
 
 Process finished with exit code 0
 
+'''
+
+'''
+目标: http://baozoumanhua.com/catalogs/gif?page=1    标题+图片 下载 并存储 baozou2016目录
 '''

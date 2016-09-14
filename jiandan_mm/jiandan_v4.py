@@ -11,7 +11,7 @@ import sys
 
 
 # 建立一个目录用于存储下载的文件:
-img_dir = 'jiandanxxoo20160612'
+img_dir = 'jiandanxxoo20160913'
 if not os.path.isdir(img_dir):
     os.mkdir(img_dir)
 
