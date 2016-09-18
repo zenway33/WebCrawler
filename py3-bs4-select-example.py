@@ -128,17 +128,6 @@ for title,img in zip(titles,imgs):
     }
 
 
-'''
-定义下载列表页函数
-'''
-def get_page_within(pages):
-    for page_num in  range(1,pages+1):
-        wb_data = requests.get('http://baozoumanhua.com/catalogs/gif?page={}'.format(page_num))
-        ....
-
-get_page_within(3)
-
-
 # 获取pdf url,返回列表
 def get_pdf_urls(web_url):
     wb_data = requests.get(web_url,headers=headers)
@@ -152,6 +141,19 @@ def get_pdf_urls(web_url):
     return pdf_urls
 
 urls = get_pdf_urls(web_url)
+
+
+'''
+定义下载列表页函数
+'''
+def get_page_within(pages):
+    for page_num in  range(1,pages+1):
+        wb_data = requests.get('http://baozoumanhua.com/catalogs/gif?page={}'.format(page_num))
+        ....
+
+get_page_within(3)
+
+
 
 #main
 if __name__ == '__main__':
