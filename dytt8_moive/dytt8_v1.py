@@ -21,17 +21,19 @@ headers = {
 }
 
 
-web_url = 'http://www.dytt8.net/'
+web_url = 'http://www.dytt8.net/html/gndy/dyzz/index.html'
 wb_data = requests.get(web_url,headers=headers)
 wb_data.encoding = 'gb2312' #保证不乱码
 soup = BeautifulSoup(wb_data.text, 'lxml')
 #print(soup.prettify())
 #header > div > div.bd2 > div.bd3 > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > div.title_all > p > strong
 #<a href="/html/gndy/dyzz/20160610/51200.html">2016年传记喜剧《飞鹰艾迪》BD中英双字幕</a>
-links = [a.attrs.get('href') for a in soup.select('a[href^=/html/gndy/dyzz/2016]')]
-moive_names = soup.select('div > ul > tr')
+#2017根据具体的年份修改
+links = [a.attrs.get('href') for a in soup.select('a[href^=/html/gndy/dyzz/2017]')]
+#moive_names = soup.select('div > ul > tr')
 
 #print(links)
+
 #link = 'http://www.dytt8.net/html/gndy/dyzz/20160617/51247.html'
 
 root_url = 'http://www.dytt8.net'
