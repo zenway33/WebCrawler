@@ -1,3 +1,20 @@
+#requests
+web_url = 'http://www.jinse.com/'
+wb_data = requests.get(web_url,headers=headers)
+soup = BeautifulSoup(wb_data.text, 'lxml')
+
+#requests example
+# 单个页面的内容抓取分析
+
+url = 'http://jandan.net/ooxx/page-2007'
+wb_data = requests.get(url,headers=headers)
+soup = BeautifulSoup(wb_data.text,'lxml')
+imgs = soup.select('p > img')
+for img_url in imgs:
+    url = img_url.get('src')
+    print(url)
+
+
 find_all 相关实例
 
 soup.find_all("a")
@@ -55,6 +72,7 @@ titles = soup.select('div.property_title > a[target="_blank"]')
 imgs = soup.select('img[width="160"]')
 cates = soup.select('div.p13n_reasoning_v2  ')
 
+#转化成为字典
 for title,img,cate in zip(titles,imgs,cates):
     data = {
         'title': title.get_text(),
@@ -161,3 +179,8 @@ if __name__ == '__main__':
 
 #获取列表页,format范例
 urls = ['http://www.guazi.com/tj/buy/o{}/'.format(str(i)) for i in range(1, 30, 1)]
+
+#IO
+#写入文件：
+with open('somefile.txt', 'a') as f:
+	f.write('Hello\n')
