@@ -72,6 +72,14 @@ titles = soup.select('div.property_title > a[target="_blank"]')
 imgs = soup.select('img[width="160"]')
 cates = soup.select('div.p13n_reasoning_v2  ')
 
+#定义列表：
+>>> list = []
+>>> list.append('abc')
+>>> list.append('cde')
+>>> list.append('def')
+>>> list
+['abc', 'cde', 'def']
+
 #转化成为字典
 for title,img,cate in zip(titles,imgs,cates):
     data = {
@@ -184,3 +192,7 @@ urls = ['http://www.guazi.com/tj/buy/o{}/'.format(str(i)) for i in range(1, 30, 
 #写入文件：
 with open('somefile.txt', 'a') as f:
 	f.write('Hello\n')
+
+with open('./geoCoordMap.json',"w") as f:
+	f.write(ejsonlist1)
+
