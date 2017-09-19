@@ -1,3 +1,18 @@
+
+# 代码片段
+
+# 编辑器快捷键
+https://www.zhihu.com/question/38946886
+右移,选中代码块，按Tab。
+要是想往左移，就按Shift + Tab
+
+#数据分析工具
+1. 在线分词工具：基于深度学习的中文在线抽词-PullWord (梁斌penny)
+2. 在线词云生成工具：TAGUL - WORD CLOUD ART
+3. 图表：ECharts
+4. 数据爬取：Python Scrapy开发程序
+
+
 #requests
 web_url = 'http://www.jinse.com/'
 wb_data = requests.get(web_url,headers=headers)
@@ -92,6 +107,19 @@ def get_numbers(read):
         result.append(trans2numbers(i.string))
     return result
 
+# 判断是否为域名
+def is_domain(domain):
+    domain_regex = re.compile(
+        r'(?:[A-Z0-9_](?:[A-Z0-9-_]{0,247}[A-Z0-9])?\.)+(?:[A-Z]{2,6}|[A-Z0-9-]{2,}(?<!-))\Z',
+        re.IGNORECASE)
+    return True if domain_regex.match(domain) else False
+
+# 判断是否为IP
+def is_ipv4(self, address):
+    ipv4_regex = re.compile(
+        r'(?:25[0-5]|2[0-4]\d|[0-1]?\d?\d)(?:\.(?:25[0-5]|2[0-4]\d|[0-1]?\d?\d)){3}',
+        re.IGNORECASE)
+    return True if ipv4_regex.match(address) else False
 
 #取列表的奇数位:
 [j for i , j in enumerate(['a', 'b','c']) if not i%2]
@@ -106,16 +134,6 @@ def carrier_list():
 
 carriers = carrier_list()
 
-# 编辑器快捷键
-https://www.zhihu.com/question/38946886
-右移,选中代码块，按Tab。
-要是想往左移，就按Shift + Tab
-
-#数据分析工具
-1. 在线分词工具：基于深度学习的中文在线抽词-PullWord (梁斌penny)
-2. 在线词云生成工具：TAGUL - WORD CLOUD ART
-3. 图表：ECharts
-4. 数据爬取：Python Scrapy开发程序
 
 # sys cli argv
 if len(sys.argv) < 2:
