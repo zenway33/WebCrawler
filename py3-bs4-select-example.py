@@ -72,13 +72,6 @@ titles = soup.select('div.property_title > a[target="_blank"]')
 imgs = soup.select('img[width="160"]')
 cates = soup.select('div.p13n_reasoning_v2  ')
 
-#定义列表：
->>> list = []
->>> list.append('abc')
->>> list.append('cde')
->>> list.append('def')
->>> list
-['abc', 'cde', 'def']
 
 #转化成为字典
 for title,img,cate in zip(titles,imgs,cates):
@@ -167,6 +160,14 @@ def get_pdf_urls(web_url):
     return pdf_urls
 
 urls = get_pdf_urls(web_url)
+
+#定义列表：
+>>> list = []
+>>> list.append('abc')
+>>> list.append('cde')
+>>> list.append('def')
+>>> list
+['abc', 'cde', 'def']
 
 
 '''
