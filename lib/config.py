@@ -24,10 +24,12 @@ allow_redirects = True
 allow_http_session = True
 
 # 是否允许随机User-Agent
-allow_random_useragent = False
+#allow_random_useragent = False
+allow_random_useragent = True
 
 # 是否允许随机X-Forwarded-For
-allow_random_x_forward = False
+#allow_random_x_forward = False
+allow_random_x_forward = True
 
 # 代理配置
 proxies = {
